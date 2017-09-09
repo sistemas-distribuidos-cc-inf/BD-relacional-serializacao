@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 
 /*	Classe usada para deserializar os objetos que
- * 	o cliente receber do servidor
+ * 	o cliente receberá do servidor
  * */
 
 public class Deserializador {
