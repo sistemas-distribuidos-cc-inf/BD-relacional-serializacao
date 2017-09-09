@@ -14,5 +14,9 @@ public class Servidor {
 		
 		//Aguardando a conexão com o cliente
 		Socket socket_cliente = socket_servidor.accept();
+		
+
+		socket_servidor.close();
+		socket_cliente.close();
 	}
 }
