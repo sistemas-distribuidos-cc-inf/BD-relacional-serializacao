@@ -1,8 +1,6 @@
 package servidor;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -21,16 +19,11 @@ public class Servidor {
 		Pessoa empregadonovo = new Pessoa();
 		Deserializador deserializa = new Deserializador();
 		
-		ObjectOutputStream saida = new ObjectOutputStream(socket_cliente.getOutputStream());
-		//ObjectInputStream entrada = new ObjectInputStream(socket_cliente.getInputStream());
-		
 		empregadonovo = deserializa.deserializar(socket_cliente);
 		
 		System.out.println("Nome do novo empregado: " + empregadonovo.getNome());
 		
 		socket_servidor.close();
-		saida.close();
-		//entrada.close();
 		socket_cliente.close();
 	}
 }

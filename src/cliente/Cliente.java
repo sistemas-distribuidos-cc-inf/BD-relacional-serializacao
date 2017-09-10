@@ -1,8 +1,6 @@
 package cliente;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -20,21 +18,8 @@ public class Cliente {
 		Pessoa novoempregado = new Pessoa("Fulano", 34);
 		Serializador serializador = new Serializador();
 		
-		ObjectInputStream entrada = new ObjectInputStream(socket_cliente.getInputStream());
-		
 		serializador.serializar(novoempregado, socket_cliente);
 		
-		/*
-		try {
-			serializa.serializar(novoempregado);
-			
-		} catch (Exception ex) {
-			System.err.println("Erro na serialização do objeto: " + ex.toString());
-		}*/
-		
-		
-		
-		//saida.close();
 		socket_cliente.close();
 	}
 }

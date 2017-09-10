@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
-import dados.Pessoa;
-
 /*Classe usada para serializar os objetos
  * que serão enviados pelo cliente para o servidor
  * */
