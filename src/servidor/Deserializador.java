@@ -9,7 +9,7 @@ import dados.Pessoa;
 
 public class Deserializador {
 	
-	public Object deserializar(Socket remetente) throws IOException {
+	public Pessoa deserializar(Socket remetente) throws IOException {
 		
 		ObjectInputStream entrada = new ObjectInputStream(remetente.getInputStream());
 		Pessoa novoempregado = new Pessoa();

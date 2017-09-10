@@ -24,7 +24,7 @@ public class Servidor {
 		ObjectOutputStream saida = new ObjectOutputStream(socket_cliente.getOutputStream());
 		//ObjectInputStream entrada = new ObjectInputStream(socket_cliente.getInputStream());
 		
-		empregadonovo = (Pessoa) deserializa.deserializar(socket_cliente);
+		empregadonovo = deserializa.deserializar(socket_cliente);
 		
 		System.out.println("Nome do novo empregado: " + empregadonovo.getNome());
 		
