@@ -1,4 +1,4 @@
-package cliente.dados;
+package servidor;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

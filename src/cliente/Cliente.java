@@ -11,6 +11,7 @@ public class Cliente {
 		//Criando o socket do cliente para que o cliente faça a conexão com o servidor
 		Socket socket_cliente = new Socket("127.0.0.1", 12345);
 		
+		//Assim que o cliente se conectar começar a serialização do objeto
 		
 		socket_cliente.close();
 	}
