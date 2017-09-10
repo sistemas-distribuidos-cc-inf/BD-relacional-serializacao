@@ -2,4 +2,4 @@
 .project
 .settings/
 bin
-dados.ser
+*.ser
