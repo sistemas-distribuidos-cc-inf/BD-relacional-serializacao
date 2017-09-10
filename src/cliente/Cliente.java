@@ -17,24 +17,24 @@ public class Cliente {
 		Socket socket_cliente = new Socket("127.0.0.1", 12345);
 		
 		//Assim que o cliente se conectar começar a serialização do objeto
-		Pessoa novoempregado = new Pessoa("osvaldo", 34);
+		Pessoa novoempregado = new Pessoa("Rafa", 34);
 		Serializador serializa = new Serializador();
 		
 		ObjectInputStream entrada = new ObjectInputStream(socket_cliente.getInputStream());
-		ObjectOutputStream saida = new ObjectOutputStream(socket_cliente.getOutputStream());
 		
+		serializa.serializar(novoempregado, socket_cliente);
 		
+		/*
 		try {
 			serializa.serializar(novoempregado);
 			
 		} catch (Exception ex) {
 			System.err.println("Erro na serialização do objeto: " + ex.toString());
-		}
-		
-		saida.writeObject("dado.ser");
+		}*/
 		
 		
-		saida.close();
+		
+		//saida.close();
 		socket_cliente.close();
 	}
 }
