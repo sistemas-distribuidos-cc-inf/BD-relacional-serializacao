@@ -22,27 +22,15 @@ public class Servidor {
 		Deserializador deserializa = new Deserializador();
 		
 		ObjectOutputStream saida = new ObjectOutputStream(socket_cliente.getOutputStream());
-		ObjectInputStream entrada = new ObjectInputStream(socket_cliente.getInputStream());
+		//ObjectInputStream entrada = new ObjectInputStream(socket_cliente.getInputStream());
 		
-		try {
-			empregadonovo = (Pessoa) entrada.readObject();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		/*
-		try {
-			empregadonovo = (Pessoa) deserializa.deserializar();
-		} catch (Exception ex) {
-			System.err.println("Falha na deserialização do objeto: " + ex.toString());
-		}*/
+		empregadonovo = (Pessoa) deserializa.deserializar(socket_cliente);
 		
 		System.out.println("Nome do novo empregado: " + empregadonovo.getNome());
 		
 		socket_servidor.close();
 		saida.close();
-		entrada.close();
+		//entrada.close();
 		socket_cliente.close();
 	}
 }

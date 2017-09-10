@@ -12,6 +12,7 @@ import dados.Pessoa;
  * */
 public class Serializador {
 	
+	//Serializar o objeto para ser mandado diretamente para o Servidor
 	public void serializar(Object obj, Socket envio) throws IOException {
 		
 		ObjectOutputStream saida = new ObjectOutputStream(envio.getOutputStream());
