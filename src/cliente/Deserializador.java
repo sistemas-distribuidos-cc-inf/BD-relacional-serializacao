@@ -11,7 +11,7 @@ import java.io.ObjectInputStream;
 public class Deserializador {
 	
 	public Object deserializar() throws ClassNotFoundException, IOException {
-		FileInputStream objetoRecebido = new FileInputStream("testa.ser");
+		FileInputStream objetoRecebido = new FileInputStream("dados.ser");
 		ObjectInputStream entrada = new ObjectInputStream(objetoRecebido);
 		
 		Object objeto_deserializado = entrada.readObject();
