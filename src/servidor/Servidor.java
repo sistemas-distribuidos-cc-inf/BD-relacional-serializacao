@@ -23,6 +23,7 @@ public class Servidor {
 		
 		System.out.println("Nome do novo empregado: " + empregadonovo.getNome());
 		
+		
 		socket_servidor.close();
 		socket_cliente.close();
 	}
