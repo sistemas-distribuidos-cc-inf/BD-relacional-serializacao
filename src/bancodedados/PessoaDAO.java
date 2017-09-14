@@ -86,4 +86,20 @@ public class PessoaDAO {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public void remove(Pessoa pessoa) {
+		
+		try {
+			
+			PreparedStatement stmt = connection.prepareStatement("delete from pessoas where id=?");
+			
+			stmt.setLong(1, pessoa.getId());
+			
+			stmt.execute();
+			stmt.close();
+			
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }

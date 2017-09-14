@@ -26,11 +26,11 @@ public class Servidor {
 		
 		PessoaDAO dao = new PessoaDAO();
 		
-		/*
+
 		dao.adiciona(empregadonovo);
 		
 		System.out.println("Foi gravado no banco de dados!");
-		*/
+		
 		
 		socket_servidor.close();
 		socket_cliente.close();
