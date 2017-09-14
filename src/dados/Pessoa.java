@@ -3,6 +3,7 @@ package dados;
 import java.io.Serializable;
 
 public class Pessoa implements Serializable{
+	private long id;
 	private String nome;
 	private int idade;
 	
@@ -13,8 +14,26 @@ public class Pessoa implements Serializable{
 	
 	public Pessoa() {};
 	
+	
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
 	public String getNome() {
 		return nome;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
 	}
 	
 	public int getIdade() {
