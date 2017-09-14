@@ -67,4 +67,23 @@ public class PessoaDAO {
 		}
 		
 	}
+	
+	public void altera(Pessoa pessoa) {
+		
+		String sql = "update pessoas set nome=?, idade=? where id=?";
+		
+		try {	
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			
+			stmt.setString(1, pessoa.getNome());
+			stmt.setInt(2, pessoa.getIdade());
+			stmt.setLong(3, pessoa.getId());
+			
+			stmt.execute();
+			stmt.close();
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }
