@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import bancodedados.*;
 import dados.Pessoa;
 
 public class Servidor {
@@ -23,6 +24,11 @@ public class Servidor {
 		
 		System.out.println("Nome do novo empregado: " + empregadonovo.getNome());
 		
+		PessoaDAO dao = new PessoaDAO();
+		
+		dao.adiciona(empregadonovo);
+		
+		System.out.println("Foi gravado no banco de dados!");
 		
 		socket_servidor.close();
 		socket_cliente.close();

@@ -39,4 +39,32 @@ public class PessoaDAO {
 				throw new RuntimeException(e);
 			}
 	}
+	
+	public List<Pessoa> getLista(){
+		
+		try {
+			
+			List<Pessoa> pessoas = new ArrayList<Pessoa>();
+			PreparedStatement stmt =  this.connection.prepareStatement("select * from pessoas");
+			ResultSet rs = stmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Pessoa pessoa = new Pessoa();
+				pessoa.setId(rs.getLong("id"));
+				pessoa.setNome(rs.getString("nome"));
+				pessoa.setIdade(rs.getInt("idade"));
+				
+				pessoas.add(pessoa);
+			}
+			
+			rs.close();
+			stmt.close();
+			return pessoas;
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		
+	}
 }
